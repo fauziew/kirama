@@ -359,7 +359,7 @@ class HelpAbout(QtWidgets.QDialog):
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('pyGamelan - New')
+        self.setWindowTitle('Kirama - New')
 
         # Create Widgets
         self.MainWidget = QtWidgets.QWidget()
@@ -471,7 +471,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def NewFile(self):
         self.Reset()
         self.Ensemble.AddInst(-1)
-        self.setWindowTitle('pyGamelan - New')
+        self.setWindowTitle('Kirama - New')
 
     def SaveFile(self):
         FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save Ensemble File', 'data/gamelan', '*.gml')
@@ -491,7 +491,7 @@ class MainWindow(QtWidgets.QMainWindow):
         FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Ensemble File', 'data/gamelan/', '*.gml')
         if FileName:
             # Read file
-            self.setWindowTitle('pyGamelan - '+ FileName)
+            self.setWindowTitle('Kirama - '+ FileName)
             f = open(FileName,'rb')
             LoadedData = pickle.load(f)
             f.close()
