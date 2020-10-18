@@ -7,7 +7,6 @@ Therefore it simplifies the creation of microtonal sounds, which is an inherent 
 # Installation
 
 - Install Python3 for your system
-- Install kirama 'pip3 install kirama' or 'pip install kirama'
 
 # Using Kirama
 
