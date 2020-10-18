@@ -275,7 +275,7 @@ class SoundEditorWindow(QtWidgets.QDialog):
         self.EQ.setSettings(self.mode)
 
     def loadFiles(self):
-        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'Data/synthesizer/', '*.syn')
+        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'kirama/Data/synthesizer/', '*.syn')
         if FileName:
             # Read file
             f = open(FileName,'rb')
@@ -319,7 +319,7 @@ class SoundEditorWindow(QtWidgets.QDialog):
             self.curve.setData(self.synth.Time,self.synth.audiograph)
 
     def saveFiles(self):
-        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'Data/synthesizer/', '*.syn')
+        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'kirama/Data/synthesizer/', '*.syn')
         if FileName:
             f = open(FileName,'wb')
             DataToSave = [self.synth.Overtone_no, self.synth.Fundamental, self.synth.Volume, Parameters]

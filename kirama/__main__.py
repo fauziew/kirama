@@ -343,7 +343,7 @@ class HelpAbout(QtWidgets.QDialog):
         self.Text = QtWidgets.QLabel()
         self.Button = QtWidgets.QPushButton()
         self.Text.setWordWrap = True
-        self.Text.setText('pyGamelan v0.1\nUpdated 17 Oct 2020\n\nby Fauzie Wiriadisastra\n\nReleased Under\nGeneral Public License')
+        self.Text.setText('Kirama Gamelan Simulator v0.1\nUpdated 17 Oct 2020\n\nby Fauzie Wiriadisastra\n\nReleased Under\nGeneral Public License')
         self.Text.setAlignment(QtCore.Qt.AlignCenter)
         self.Button.setText('Ok')
 
@@ -474,7 +474,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowTitle('pyGamelan - New')
 
     def SaveFile(self):
-        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save Ensemble File', 'Data/gamelan', '*.gml')
+        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save Ensemble File', 'kirama/Data/gamelan', '*.gml')
         if FileName:
             f = open(FileName,'wb')
             DataToSave = [self.Ensemble.Inst_no]
@@ -488,7 +488,7 @@ class MainWindow(QtWidgets.QMainWindow):
             f.close()
 
     def LoadFile(self):
-        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Ensemble File', 'Data/gamelan/', '*.gml')
+        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Ensemble File', 'kirama/Data/gamelan/', '*.gml')
         if FileName:
             # Read file
             self.setWindowTitle('pyGamelan - '+ FileName)
