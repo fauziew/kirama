@@ -12,8 +12,3 @@ Using python interpreter
 - Download and unpack source file
 - Navigate to source directory
 - 'python3 kirama.py' or 'python kirama.py'
-
-Using standalone program
-
-- Download appropriate binary for your system
-- unpack and run the program (./kirama on linux)
