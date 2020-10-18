@@ -6,9 +6,14 @@ Therefore it simplifies the creation of microtonal sounds, which is an inherent 
 
 # Installation
 
+Using python interpreter
+
 - Install Python3 for your system
+- Download and unpack source file
+- Navigate to source directory
+- 'python3 kirama.py' or 'python kirama.py'
 
-# Using Kirama
+Using standalone program
 
-'python kirama' or 'python3 kirama'
-Open example gamelan files.
+- Download appropriate binary for your system
+- unpack and run the program (./kirama on linux)

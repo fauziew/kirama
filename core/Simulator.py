@@ -2,10 +2,10 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from datetime import datetime
 from scipy.io.wavfile import write
 import simpleaudio as sa
-import Synth 
 import pickle
 import numpy as np
 import pyqtgraph as pg
+import core.Synth as Synth
 
 SampleRate = 44100
 
@@ -184,14 +184,14 @@ class Recorder(Simulator):
         PlayAudio(self.audio)
 
     def SaveKeyStroke(self):
-        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'kirama/Data/record/', '*.rec')
+        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', 'data/record/', '*.rec')
         if FileName:
             f = open(FileName,'wb')
             pickle.dump(self.KeyStrokeHistory,f)
             f.close()
 
     def LoadKeyStroke(self):
-        FileName, _ = FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'kirama/Data/record/', '*.rec')
+        FileName, _ = FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'data/record/', '*.rec')
         if FileName:
             f = open(FileName,'rb')
             self.KeyStrokeHistory = pickle.load(f)
@@ -282,7 +282,7 @@ class TextReader(Simulator):
         PlayAudio(self.audio)
 
     def LoadTextFile(self):
-        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'kirama/Data/text/', '*.txt')
+        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File', 'data/text/', '*.txt')
         if FileName:
             f = open(FileName,'r')
             self.Text = f.read()
@@ -292,7 +292,7 @@ class TextReader(Simulator):
         ExportWav(self.audio)
 
 def ExportWav(audio):
-    FileName, _ = QtWidgets.QFileDialog.getSaveFileName(None, 'Export As Wave', 'kirama/Data/wav/', '*.wav')
+    FileName, _ = QtWidgets.QFileDialog.getSaveFileName(None, 'Export As Wave', 'data/wav/', '*.wav')
     if FileName:
         write(FileName, SampleRate, audio)
 

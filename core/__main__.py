@@ -1,9 +1,9 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 from datetime import datetime
-from Simulator import Recorder, TextReader
 import simpleaudio as sa
-import Synth, SynthGUI
 import copy, pickle
+from core import Synth, SynthGUI
+from core.Simulator import Recorder, TextReader
 
 SampleRate = 44100
 
@@ -474,7 +474,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setWindowTitle('pyGamelan - New')
 
     def SaveFile(self):
-        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save Ensemble File', 'kirama/Data/gamelan', '*.gml')
+        FileName, _  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save Ensemble File', 'data/gamelan', '*.gml')
         if FileName:
             f = open(FileName,'wb')
             DataToSave = [self.Ensemble.Inst_no]
@@ -488,7 +488,7 @@ class MainWindow(QtWidgets.QMainWindow):
             f.close()
 
     def LoadFile(self):
-        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Ensemble File', 'kirama/Data/gamelan/', '*.gml')
+        FileName, _ = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Ensemble File', 'data/gamelan/', '*.gml')
         if FileName:
             # Read file
             self.setWindowTitle('pyGamelan - '+ FileName)
@@ -536,8 +536,11 @@ class MainWindow(QtWidgets.QMainWindow):
 def PlayAudio(audio16bit):
     play_obj = sa.play_buffer(audio16bit, 1, 2, SampleRate)
 
-if __name__ == "__main__":
+def main():
     app = QtWidgets.QApplication([])
     win = MainWindow()
     win.show()
     app.exec_()
+
+if __name__ == '__main__':
+    main()
