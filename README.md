@@ -6,9 +6,16 @@ Therefore it simplifies the creation of microtonal sounds, which is an inherent 
 
 # Installation
 
-Using python interpreter
-
 - Install Python3 for your system
-- Download and unpack source file
-- Navigate to source directory
-- 'python3 kirama.py' or 'python kirama.py'
+
+- Install pipenv 
+	'pip install pipenv' or 'pip3 install pipenv'
+
+- Run virtual environment
+	'pipenv shell'
+
+- Install dependencies inside the virtual environment
+	'pipenv install'
+
+- Run kirama
+	'python kirama.py' or 'python3 kirama.py'
